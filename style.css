@@ -1,0 +1,64 @@
+body {
+  margin: 0 auto;
+  padding: 0%;
+  background: rgb(5, 255, 0);
+  background: linear-gradient(
+    275deg,
+    rgba(5, 255, 0, 1) 0%,
+    rgba(255, 248, 0, 1) 50%,
+    rgba(112, 255, 0, 1) 100%
+  );
+  background-size: 800%;
+  animation: fondo-animacion 2s infinite alternate;
+}
+
+.nombrepersonaje {
+  position :absolute;
+  color: black;
+  z-index: 3;
+  top: 75%;
+  left: 50%;
+  font-size: 16px;
+}
+
+h3 {
+  color: black;
+}
+
+main {
+  height: 100vh;
+  width: 100 vw;
+  text-align: center;
+}
+
+.marco {
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border: white solid 2px;
+  height: 300px;
+  width: 300px;
+}
+
+.marco:hover {
+  animation: bounce 0.8s infinite alternate;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50px);
+  }
+}
+
+@keyframes fondo-animacion {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}

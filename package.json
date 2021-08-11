@@ -1,0 +1,12 @@
+{
+  "name": "proyect-1",
+  "version": "1.0.0",
+  "description": "Proyecto alternativo",
+  "main": "script.js",
+  "scripts": {
+    "start": "script.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Isaac M",
+  "license": "ISC"
+}
