@@ -2,6 +2,10 @@ const main = document.querySelector("main");
 const URL_BASE = "https://rickandmortyapi.com/api/character";
 
 let characterArray = [];
+const imgCard = document.getElementById("imgCard")
+
+
+
 
 fetch(`${URL_BASE}`)
 .then((response) => {
@@ -15,14 +19,28 @@ fetch(`${URL_BASE}`)
     let personajes = character.results[i];
     console.log(personajes);
     let imagen = document.createElement("img");
+    imagen.id= i;
     imagen.className = "marco";
     imagen.src = character.results[i].image;
     main.appendChild(imagen);
+      
+   imagen.addEventListener("click", (event)=>{
+     console.log(imagen.id,event);
 
-    //let name = document.createElement("h3");
-    //name.className = "nombrePersonaje";
-    //name.src = character.results[i].name;
-    //imagen.appendChild(name)
+   });
+
+
+   function logInfo(id) {
+     console.log(
+       "id", id
+     );
+   } 
+
+    //Agregar Texto sobre la imagen
+    let name = document.createElement("h3");
+    name.className = "nombrePersonaje";
+    name.src = character.results[i].name;
+    imagen.appendChild(name)
    
     
    
@@ -36,9 +54,5 @@ fetch(`${URL_BASE}`)
 setTimeout(()=>{
 console.log(characterArray);
 },3000)
+//Eventlistener para capturar info de el  mouse REVISAR
 
-
-document.addEventListener("onclick", logInfo());
-function logInfo(event) {
-  console.log(event);
-}
