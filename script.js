@@ -24,26 +24,11 @@ fetch(`${URL_BASE}`)
     imagen.src = character.results[i].image;
     main.appendChild(imagen);
       
-   imagen.addEventListener("click", (event)=>{
-     console.log(imagen.id,event);
-
-   });
-
-
-   function logInfo(id) {
-     console.log(
-       "id", id
-     );
-   } 
-
-    //Agregar Texto sobre la imagen
-    let name = document.createElement("h3");
-    name.className = "nombrePersonaje";
-    name.src = character.results[i].name;
-    imagen.appendChild(name)
-   
-    
-   
+         
+    imagen.addEventListener("click", () => {
+      location.href = `index2.html?id=${imagen.id}`
+      
+    }); 
     
   }
 })
@@ -54,5 +39,4 @@ fetch(`${URL_BASE}`)
 setTimeout(()=>{
 console.log(characterArray);
 },3000)
-//Eventlistener para capturar info de el  mouse REVISAR
 
